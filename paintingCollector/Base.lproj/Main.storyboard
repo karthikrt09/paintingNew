@@ -63,14 +63,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ikK-rp-DMe">
-                                <rect key="frame" x="22.5" y="114" width="275" height="175"/>
+                                <rect key="frame" x="23" y="114" width="275" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="00Q-ct-HbG"/>
                                     <constraint firstAttribute="width" constant="275" id="Lzy-xv-ICj"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vZd-t5-C0b">
-                                <rect key="frame" x="22.5" y="318" width="275" height="27"/>
+                                <rect key="frame" x="23" y="318" width="275" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="qIj-rf-HUC"/>
                                 </constraints>
@@ -93,11 +93,28 @@
                                     <action selector="addTapped:" destination="FeO-da-xg0" eventType="touchUpInside" id="6ht-Qm-JrE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npa-f6-sMl">
+                                <rect key="frame" x="110" y="455" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.38597232100000001" green="0.74308753009999995" blue="0.096533156930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="FgH-Rh-LXF"/>
+                                    <constraint firstAttribute="height" constant="40" id="Hg9-Be-ctz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTapped:" destination="FeO-da-xg0" eventType="touchUpInside" id="qBa-uD-ChS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ikK-rp-DMe" firstAttribute="centerX" secondItem="noO-bS-aQ9" secondAttribute="centerX" id="4vI-kp-iIA"/>
                             <constraint firstItem="0n1-pm-lFC" firstAttribute="centerX" secondItem="noO-bS-aQ9" secondAttribute="centerX" id="7kD-BZ-yp9"/>
+                            <constraint firstItem="npa-f6-sMl" firstAttribute="top" secondItem="0n1-pm-lFC" secondAttribute="bottom" constant="32" id="91Z-m5-0YT"/>
+                            <constraint firstItem="npa-f6-sMl" firstAttribute="centerX" secondItem="noO-bS-aQ9" secondAttribute="centerX" id="C7r-El-a0i"/>
                             <constraint firstItem="vZd-t5-C0b" firstAttribute="centerX" secondItem="noO-bS-aQ9" secondAttribute="centerX" id="FaZ-sV-Jxb"/>
                             <constraint firstItem="0n1-pm-lFC" firstAttribute="top" secondItem="vZd-t5-C0b" secondAttribute="bottom" constant="38" id="LLM-Zz-crU"/>
                             <constraint firstItem="ikK-rp-DMe" firstAttribute="top" secondItem="e1b-Zw-GfL" secondAttribute="bottom" constant="50" id="W8b-YZ-srj"/>
@@ -120,6 +137,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateButton" destination="0n1-pm-lFC" id="R0a-4C-lob"/>
+                        <outlet property="deleteButton" destination="npa-f6-sMl" id="Tmv-bv-f1S"/>
                         <outlet property="paintingImageView" destination="ikK-rp-DMe" id="X4N-Ph-U9w"/>
                         <outlet property="titleTextField" destination="vZd-t5-C0b" id="NLp-HQ-58O"/>
                     </connections>

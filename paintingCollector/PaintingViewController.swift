@@ -9,7 +9,9 @@
 import UIKit
 
 class PaintingViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var addUpdateButton: UIButton!
     @IBOutlet weak var paintingImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     
@@ -23,10 +25,12 @@ class PaintingViewController: UIViewController, UIImagePickerControllerDelegate,
         
         if paint1 != nil{
             
-            print("we have a game")
-            
-        }else{
-            print ("we have no game")
+           paintingImageView.image = UIImage(data: paint1!.image as! Data)
+           titleTextField.text = paint1!.title
+           addUpdateButton.setTitle("Update", for: .normal)
+        }
+        else{
+            deleteButton.isHidden = true
         }
         
     }
